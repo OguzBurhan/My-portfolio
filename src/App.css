@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #5e5f61;
+  padding: 20px;
+  color: white;
+}
+
+.portfolio-item {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  display: inline-block;
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-content {
+  margin-left: 250px; 
+  padding: 1em;
+}

@@ -1,0 +1,68 @@
+/* src/Sidebar.css */
+.sidebar {
+  height: 100vh; /* Full height of the viewport */
+  width: 250px; /* Sidebar width */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #f0f0f0; /* Light gray background */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+  border-radius: 0 20px 20px 0; /* Rounded edges on the right side */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth, adjusted for sidebar */
+}
+
+
+.profile-pic {
+  width: 120px; /* Set the size of the picture */
+  height: 120px; /* Keep the height the same as the width */
+  border-radius: 50%; /* Circular picture */
+  margin-bottom: 20px; /* Space between picture and links */
+  border: 3px solid #00897b; /* Optional: border color */
+  object-fit: cover; /* Ensure the image covers the space without distortion */
+}
+
+
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%; /* Match the width of the sidebar for alignment */
+}
+
+/* src/Sidebar.css */
+.profile-pic {
+  width: 120px; 
+  height: 120px; 
+  border-radius: 50%; /* Makes the image circular */
+  margin-bottom: 20px; /* Space between the picture and the title */
+  border: 3px solid #00897b; 
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Enhancing the hover effect on links */
+.sidebar ul li a {
+  color: #00897b; /* Initial link color */
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: color 0.3s, transform 0.3s; 
+  will-change: transform; 
+}
+
+.sidebar ul li a:hover, .sidebar ul li a:focus {
+  color: #0056b3; /* Color on hover */
+  transform: translateX(10px) scale(1.1); /* Moves the link to the right and slightly enlarges it */
+  transition: color 0.3s, transform 0.3s; /* Ensures the transition applies in both directions */
+}
+
+
+.sidebar ul li a:hover, .sidebar ul li a:focus {
+  color: #0056b3; /* Color on hover */
+  transform: translateX(10px); /* Moves the link to the right */
+}
