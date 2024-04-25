@@ -26,8 +26,7 @@ function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.4 }}
       >          
-                Hello! I'm a passionate software developer with a love for creating beautiful and functional web applications. With a background in computer science and a keen eye for design, I blend technical skills with creativity to build user-friendly experiences.
-          I specialize in front-end development, particularly with React, and I'm always eager to learn new technologies and frameworks to enhance my work.
+           Hello! I'm a passionate software developer with a love for creating beautiful and functional web applications. With a background in computer science and a keen eye for design, I blend technical skills with creativity to build user-friendly experiences. I specialize in back-end development, particularly with JavaScript, and I'm always eager to learn new technologies and frameworks to enhance my work.
       </motion.p>
       <motion.div
         initial={{ y: 20, opacity: 0 }}
