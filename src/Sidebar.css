@@ -1,79 +1,51 @@
 /* src/Sidebar.css */
 .sidebar {
-  height: 100vh; /* Full height of the viewport */
-  width: 250px; /* Initial sidebar width */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
   left: 0;
-  background-color: #f0f0f0; /* Light gray background */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #f0f0f0;
+  overflow-x: hidden;
   padding-top: 20px;
-  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  font-family: 'Courier New', Courier, monospace;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center children horizontally */
-  border-radius: 0 20px 20px 0; /* Rounded edges on the right side */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  transition: width 0.3s ease; /* Smooth transition for width changes */
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Stay on top */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0); /* Ensure sidebar is always visible on desktop */
 }
 
 .profile-pic {
-  width: 120px; /* Set the size of the picture */
-  height: 120px; /* Keep the height the same as the width */
-  border-radius: 50%; /* Circular picture */
-  margin-bottom: 20px; /* Space between picture and links */
-  border: 3px solid #00897b; /* Optional: border color */
-  object-fit: cover; /* Ensure the image covers the space without distortion */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #00897b;
+  object-fit: cover;
 }
 
 .sidebar ul {
   list-style-type: none;
   padding: 0;
-  width: 100%; /* Match the width of the sidebar for alignment */
+  width: 100%;
 }
 
 .sidebar ul li a {
-  color: #00897b; /* Initial link color */
+  color: #00897b;
   padding: 10px;
   text-decoration: none;
   display: block;
-  transition: color 0.3s, transform 0.3s; 
-  will-change: transform; 
+  transition: color 0.3s, transform 0.3s;
+  will-change: transform;
 }
 
 .sidebar ul li a:hover, .sidebar ul li a:focus {
-  color: #0056b3; /* Color on hover */
-  transform: translateX(10px) scale(1.1); /* Moves the link to the right and slightly enlarges it */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 200px; /* Smaller width on tablets and large phones */
-  }
-
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    width: 150px; /* Even smaller width on mobile phones */
-    padding-top: 10px; /* Reduced padding */
-  }
-
-  .profile-pic {
-    width: 80px;
-    height: 80px;
-  }
-
-  .sidebar ul li a {
-    padding: 8px; /* Smaller padding for smaller screens */
-    font-size: 0.9rem; /* Smaller font size for better fit */
-  }
+  color: #0056b3;
+  transform: translateX(10px) scale(1.1);
 }
 
 .close-btn {
@@ -82,7 +54,38 @@
   right: 10px;
   background: transparent;
   border: none;
-  color: #333; /* Or any color that matches your design */
+  color: #333;
   font-size: 24px;
   cursor: pointer;
+}
+
+/* Toggle button hidden by default and shown in mobile view */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  padding: 10px 15px;
+  background-color: #00897b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Media Queries for mobile behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Start off-screen */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Slide into view when 'open' */
+  }
+
+  .sidebar-toggle {
+    display: block; /* Show toggle button on smaller screens */
+  }
 }
