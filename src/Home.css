@@ -1,65 +1,112 @@
 /* src/Home.css */
 body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #333; /* Adjust color to fit your design */
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #0056b3; /* Change to a highlight color when hovered */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  color: #333;
+  background-color: #f0f0f0;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 20px;
+  width: 80vw;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 5vh;
+}
+
+.home-description {
+  text-align: justify; /* Justifies the text along both left and right edges */
+  text-justify: inter-word; /* Improves spacing between words */
+  padding: 10px 20px; /* Retains padding for readability */
+  margin: 20px auto; /* Centered and adds vertical spacing */
+  width: 100%;
+  max-width: 60%; /* Adjusts maximum width */
+  box-sizing: border-box; /* Makes sure padding and border are included in the width calculation */
+  font-family: 'Courier New', Courier, monospace; /* Maintains font consistency */
+}
+
+.home-title {
+  color: #004d40;
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.home-link {
+  background-color: #00897b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.home-link:hover {
+  background-color: #00695c;
+  transform: scale(1.05);
+}
+
+.home-title, .home-link, .social-links {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Adds a global animation for fading in the whole page */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 2s ease-out;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
   .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    color: #333;
-    background-color: #f0f0f0; 
-    font-family: 'Courier New', Courier, monospace; 
-    border-radius: 20px; 
-    width: 80vw; 
-    margin: auto; 
-    max-width: 1200px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding-top: 5vh;
+    width: 95%;
+    padding-top: 3vh;
   }
-  
-  
+
   .home-title {
-    color: #004d40; 
-    font-size: 2.5rem;
-    margin: 0 0 20px 0;
-    font-family: 'Courier New', Courier, monospace;
-
-
+    font-size: 2rem; /* Smaller font size for smaller screens */
   }
-  
-  .home-link {
-    background-color: #00897b; 
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-    font-family: 'Courier New', Courier, monospace;
 
+  .home-description {
+    max-width: 80%; /* Slightly wider in proportion on smaller screens */
+    padding: 8px 15px; /* Smaller padding */
   }
-  
-  .home-link:hover {
-    background-color: #00695c; 
-    transform: scale(1.05); 
-    font-family: 'Courier New', Courier, monospace;
 
+  .home-link, .social-links a {
+    padding: 8px 16px; /* Slightly smaller padding */
   }
-  
-  /* Adds a global animation for fading in the whole page */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  body {
-    animation: fadeIn 2s ease-out;
-    font-family: 'Courier New', Courier, monospace;
+}
 
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 1.5rem; /* Even smaller font size for mobile devices */
   }
-  
+
+  .home-description {
+    max-width: 90%; /* Use more space as screens get smaller */
+  }
+}

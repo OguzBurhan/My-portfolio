@@ -1,59 +1,77 @@
 /* src/Contact.css */
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    color: #333;
-    background-color: #f0f0f0; 
-    font-family: 'Courier New', Courier, monospace; 
-    border-radius: 20px; 
-    width: 80vw; 
-    margin: auto; 
-    max-width: 1200px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding-top: 5vh;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  form label {
-    margin-top: 10px;
-  }
-  
-  form input[type="text"],
-  form input[type="email"],
-  form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-/* src/Contact.css */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Change from 90vh to auto for better mobile adaptability */
+  min-height: 95vh; /* Ensures the container takes at least the height of the viewport */
+  color: #333;
+  background-color: #f0f0f0;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 20px;
+  width: 75vw;
+  margin: auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 5vh 20px; /* Uniform padding around */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Makes the form responsive */
+  max-width: 500px; /* Maximum width of the form */
+  padding: 20px; /* Added padding for better spacing */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+form label {
+  margin-top: 10px;
+  text-align: left; /* Ensures label alignment is consistent */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%; /* Full width to fill form */
+  padding: 12px; /* Increased padding for better touch interaction */
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
 form input[type="submit"] {
-    background-color: #00897b;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    margin-left: auto; 
-    margin-right: auto; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 50%; 
-    max-width: 200px; 
+  background-color: #00897b;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 20px;
+  display: block; /* Center the button more reliably */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+  max-width: 200px;
+  margin: 20px auto; /* Automatically centers the button */
+}
+
+form input[type="submit"]:hover {
+  background-color: #00796b;
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+      width: 90vw; /* Slightly wider on smaller screens */
+      padding: 5vh 10px; /* Smaller side paddings */
   }
-  
-  form input[type="submit"]:hover {
-    background-color: #00796b;
+
+  form {
+      max-width: 100%; /* Allows the form to expand to full container width */
   }
-  
-  
+
+  form input[type="submit"] {
+      width: 80%; /* Larger button for easier interaction on mobile */
+  }
+}

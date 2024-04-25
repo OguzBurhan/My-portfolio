@@ -1,11 +1,61 @@
+/* Universal Box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Body and Document Setup */
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4; /* Light grey background */
+  color: #333; /* Dark grey text for better readability */
+  line-height: 1.6; /* Improved line height for readability */
 }
 
+/* Code Element Styling */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  background-color: #eee; /* Light background for code blocks */
+  padding: 2px 4px; /* Padding around code */
+  border-radius: 3px; /* Rounded corners for code blocks */
+  color: #000000; /* Optional: style for syntax highlighting */
+}
+
+/* Links Styling */
+a {
+  color: #010911; /* Standard link color */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s; /* Smooth transition for hover effects */
+}
+
+a:hover,
+a:focus {
+  color: #01070d; /* Darker blue on hover/focus for better visibility */
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* Image Responsiveness */
+img {
+  max-width: 100%; /* Ensure images are never more than their container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Utility Classes */
+.hidden {
+  display: none; /* Class to quickly hide elements */
+}
+
+
+
+/* Responsive Text Sizes */
+html {
+  font-size: 100%; /* Default font size */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%; /* Slightly smaller font-size on mobile devices */
+  }
 }

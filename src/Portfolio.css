@@ -1,32 +1,70 @@
 /* src/Portfolio.css */
 .portfolio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.project-item {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  border: 2px solid #00897b;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.project-item:hover, .project-item:focus {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.watch-video-button {
+  align-self: center; /* Ensures the button is centered within the project-item */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #00897b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.watch-video-button:hover {
+  background-color: #00695c; /* Slightly darker on hover for better visual feedback */
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+  .portfolio-container {
+    padding: 10px; /* Reduced padding on smaller screens */
+    gap: 10px; /* Reduced gap to save space */
   }
-  
+
   .project-item {
-    text-decoration: none; 
-    color: inherit; 
-    display: block; 
-    background-color: #f0f0f0;
-    border: 2px solid #00897b;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  .project-item:hover, .project-item:focus {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    max-width: 100%; /* Allows the project items to expand to full container width on smaller devices */
   }
   
   .project-content {
-    padding: 20px;
+    padding: 10px; /* Reduced padding inside project items for smaller screens */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    flex-direction: column; /* Ensures layout stays manageable on very small screens */
+  }
+}

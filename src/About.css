@@ -1,4 +1,4 @@
-/* src/About.css */
+/* Base styles */
 .about-container {
   max-width: 800px;
   margin: 20px auto;
@@ -16,6 +16,7 @@
 
 .about-header p {
   text-align: center;
+  padding-left: 10px; /* Adjust padding for alignment */
   margin: 10px 0;
 }
 
@@ -26,20 +27,55 @@
 .about-section h2 {
   color: #004d40;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .about-item h3 {
   margin-top: 0;
+  text-align: left;
 }
 
 .about-item p, .about-item ul {
-  margin-left: 20px;
+  margin-left: 20px; /* Consistent indentation for paragraphs and lists */
+  text-align: left;
 }
 
 .about-item ul {
-  list-style-type: disc;
+  list-style-type: disc; /* Bullet points for list items */
 }
 
 ul li {
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* Spacing between list items */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px; /* Reduced padding for smaller screens */
+    margin: 10px auto;
+  }
+
+  .about-header h1, .about-header p, .about-section h2, .about-item h3, .about-item p, .about-item ul {
+    text-align: center; /* Center text for better mobile readability */
+    margin-left: 0; /* Remove left margin */
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .about-item ul {
+    padding-left: 20px; /* Adjust list padding for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 10px; /* Even smaller padding for very small screens */
+  }
+
+  .about-header h1 {
+    font-size: 1.8rem; /* Smaller font size for header */
+  }
+
+  .about-section h2, .about-item h3 {
+    font-size: 1.5rem; /* Smaller font sizes for section headings */
+  }
 }

@@ -12,15 +12,38 @@
   margin: 20px;
   padding: 20px;
   border: 1px solid #ddd;
-  display: inline-block;
+  display: inline-block; /* Consider changing this for smaller screens */
 }
 
 .portfolio-item img {
   max-width: 100%;
-  height: auto;
+  height: auto; /* Ensures images scale correctly */
 }
 
 .main-content {
-  margin-left: 250px; 
+  margin-left: 250px; /* This needs adjustment for mobile screens */
   padding: 1em;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0; /* Removes fixed margin for smaller screens */
+  }
+
+  .portfolio-item {
+    width: calc(50% - 40px); /* Adjust width to show two items per row on smaller tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    width: calc(100% - 40px); /* Full width for mobile devices, adjust padding/margin as necessary */
+    margin: 10px; /* Smaller margins on small screens */
+    padding: 10px;
+  }
+
+  .App-header {
+    padding: 10px; /* Reduced padding on smaller screens */
+  }
 }
